@@ -1,0 +1,165 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #777;
+    --accent-color: #007BFF;
+    --bg-color: #f9f9f9;
+    --border-color: #ddd;
+    --table-border: 1px solid #ddd;
+    --padding: 20px;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: var(--padding);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header, .sales-receipt {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.header {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.sub-header {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.number {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    text-align: center;
+    margin: 10px 0;
+}
+
+.sales-receipt {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 20px;
+    color: var(--primary-color);
+}
+.date{
+    text-align: center;
+    font-weight: 500;
+    line-height: 0.1;
+}
+.date, .id, .counter {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.receipt-summary {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 30px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.receipt-summary li {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.receipt-summary li:last-child {
+    border-bottom: none;
+}
+
+.receipt-summary strong {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.receipt-summary span {
+    margin-left: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table td:first-child, table th:first-child {
+    text-align: left;
+}
+
+table td:last-child, table th:last-child {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 2rem;
+    }
+
+    .sub-header {  
+        font-size: 1rem;
+    }
+
+    .sales-receipt {
+        font-size: 1.3rem;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 1.8rem;
+    }
+
+    .sub-header {
+        font-size: 0.9rem;
+    }
+
+    .sales-receipt {
+        font-size: 1.2rem;
+    }
+
+    table th, table td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}
