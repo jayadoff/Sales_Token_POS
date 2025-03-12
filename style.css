@@ -4,7 +4,6 @@
     --accent-color: #007BFF;
     --bg-color: #f9f9f9;
     --border-color: #ddd;
-    --table-border: 1px solid #ddd;
     --padding: 20px;
     --font-family: 'Poppins', sans-serif;
 }
@@ -22,7 +21,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 400px;
     background-color: #fff;
     padding: var(--padding);
     border-radius: 8px;
@@ -35,9 +34,10 @@ body {
 }
 
 .header {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    line-height: 1.5vh;
+    
 }
 
 .sub-header {
@@ -61,11 +61,13 @@ body {
     margin-top: 20px;
     color: var(--primary-color);
 }
-.date{
+
+.date {
     text-align: center;
     font-weight: 500;
     line-height: 0.1;
 }
+
 .date, .id, .counter {
     font-size: 1rem;
     color: var(--primary-color);
@@ -81,42 +83,50 @@ table {
 .receipt-summary {
     list-style-type: none;
     padding: 0;
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 16px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: stretch; 
+}
+
+.np {
+    text-align: center;
+    font-weight: 500;
 }
 
 .receipt-summary li {
     display: flex;
-    justify-content: flex-end;
-    padding: 8px 10px;
+    justify-content: space-between; 
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 0; 
+    line-height: 1.5;
+   font-size: 16px;
+    list-style: none;
 }
 
-.receipt-summary li:last-child {
-    border-bottom: none;
-}
 
 .receipt-summary strong {
     font-weight: bold;
-    margin-right: 10px;
 }
 
-.receipt-summary span {
-    margin-left: 10px;
+.receipt-summary .label {
+    width: 50%; 
+    text-align: right; 
+}
+
+.receipt-summary .amount {
+    width: 50%; 
+    text-align: right; 
 }
 
 th, td {
     padding: 10px;
     text-align: center;
+     line-height: 1.3vh;
 }
 
-table tbody tr {
-    border-bottom: 1px solid #ddd;
-}
+
 
 table td:first-child, table th:first-child {
     text-align: left;
@@ -124,6 +134,23 @@ table td:first-child, table th:first-child {
 
 table td:last-child, table th:last-child {
     text-align: right;
+}
+
+.barcode {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.barcode svg {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.barcode svg {
+    max-width: 200px;
 }
 
 @media (max-width: 768px) {
@@ -161,5 +188,17 @@ table td:last-child, table th:last-child {
     table th, table td {
         font-size: 0.8rem;
         padding: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .barcode svg {
+        max-width: 150px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .barcode svg {
+        max-width: 120px; 
     }
 }

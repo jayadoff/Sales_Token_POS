@@ -6,8 +6,10 @@
     <title>Token</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
+    
+    <!-- JsBarcode Script for Barcode Generation -->
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -19,12 +21,15 @@
         <p><span class="id">Sales Id:</span> POS 48065</p>
         <p><span class="counter">Employee Counter:</span> 1</p>
 
+        
+        
+
         <table class="receipt-table">
             <thead>
                 <tr>
                     <th>Item</th>
                     <th>Price</th>
-                    <th>Quantity</th>
+                    <th>Qty.</th>
                     <th>Discount</th>
                     <th>Total</th>
                 </tr>
@@ -32,18 +37,50 @@
             <tbody>
                 <tr>
                     <td>Example Item</td>
-                    <td>$10.00</td>
+                    <td>10.00</td>
                     <td>2</td>
                     <td>10%</td>
-                    <td>$18.00</td>
-               
+                    <td>18.00</td>
+                </tr>
+                <tr>
+                    <td>Example Item</td>
+                    <td>10.00</td>
+                    <td>2</td>
+                    <td>10%</td>
+                    <td>18.00</td>
+                </tr>
+
+                <tr>
+                    <td>Example Item</td>
+                    <td>10.00</td>
+                    <td>2</td>
+                    <td>10%</td>
+                    <td>18.00</td>
+                </tr>
             </tbody>
         </table>
+
         <ul class="receipt-summary">
-            <li><strong>Total:</strong> $18.00</li>
-            <li><strong>Due:</strong> $0.00</li>
-            <li><strong>Paid:</strong> $18.00</li>
+            <li><span class="label"><strong>Total</strong></span>:<span class="amount">50.00</span></li>
+            <li><span class="label"><strong>Due</strong></span>:<span class="amount">50.00</span></li>
+            <li><span class="label"><strong>Paid</strong></span>:<span class="amount">50.00</span></li>
         </ul>
+
+        <p>Paid by: bKash</p>
+       
+        <p class="np">Goods once sold, no exchange, no refund or no return</p>
+        <div class="barcode">
+            <svg id="barcode"></svg>
+        </div>
     </div>
+
+   
+    <script>
+        JsBarcode("#barcode", "POS 48065", {
+            format: "CODE128", 
+            displayValue: true,
+            fontSize: 18
+        });
+    </script>
 </body>
 </html>
